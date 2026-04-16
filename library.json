@@ -1,0 +1,30 @@
+{
+  "name": "libwebp",
+  "version": "1.4.0",
+  "description": "WebP codec library",
+  "keywords": "webp, image, codec, decode, encode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wiesenthal/libwebp.git"
+  },
+  "authors": [
+    {
+      "name": "WebP Project",
+      "maintainer": true
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "frameworks": ["arduino"],
+  "platforms": ["espressif32"],
+  "build": {
+    "includeDir": ".",
+    "flags": ["-DWEBP_USE_THREAD=0"],
+    "srcFilter": [
+      "+<dec/>",
+      "+<dsp/>",
+      "+<utils/>",
+      "-<enc/>"
+    ]
+  },
+  "include": "src"
+}
